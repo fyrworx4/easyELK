@@ -71,9 +71,9 @@ echo "---------------------------------------------------------------"
 
 EPATH="/etc/elasticsearch/elasticsearch.yml"
 
-sed 's/#network.host: 192.168.0.1/network.host: 0.0.0.0' $EPATH
-sed 's/#http.port: 9200/http.port 9200' $EPATH
-sed 's/#discovery.seed_hosts: ["host1", "host2"]/discovery.seed_hosts ["127.0.0.1"]' $EPATH
+sudo sed 's/#network.host: 192.168.0.1/network.host: 0.0.0.0/' $EPATH
+sudo sed 's/#http.port: 9200/http.port 9200/' $EPATH
+sudo sed 's/#discovery.seed_hosts: ["host1", "host2"]/discovery.seed_hosts ["127.0.0.1"]/' $EPATH
 
 sudo systemctl restart elasticsearch.service
 
