@@ -79,3 +79,10 @@ sudo systemctl restart elasticsearch.service
 
 systemctl is-active --quiet service && echo " Elasticsearch is running. "
 
+CURL_OUTPUT=$(curl -X GET http://localhost:9200)
+TAGLINE='"tagline" : "You Know, for Search"'
+
+if [ $? == *"$TAGLINE"* ]
+then
+  echo "Nice"
+fi
